@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M4 Challenge</title>
+  <script src="index.js"></script>
+</head>
+<body>
+  <h1 style="text-align:center;">Open the Console to See the Magic ✨! </h1>
+<style>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 0;
+        padding: 0;
+    }
+    .board {
+        background-color: #bd3bdb;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(146, 126, 144, 0.1);
+        max-width: 600px;
+        margin: 20px auto;
+    }
+    .board ul {
+        list-style: none;
+        padding: 0;
+    }
+    .board li {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="board">
+    <h2>Financial Analysis</h2>
+    <ul>
+        <li><strong>Total Months:</strong> <span id="totalMonths"></span></li>
+        <li><strong>Total:</strong> $<span id="totalProfitLoss"></span></li>
+        <li><strong>Average Change:</strong> $<span id="averageChange"></span></li>
+        <li><strong>Greatest Increase in Profits/Losses:</strong> <span id="greatestIncreaseDate"></span> (<span id="greatestIncreaseAmount"></span>)</li>
+        <li><strong>Greatest Decrease in Profits/Losses:</strong> <span id="greatestDecreaseDate"></span> (<span id="greatestDecreaseAmount"></span>)</li>
+    </ul>
+</div>
+<script>
+  const analysisResult = {
+      totalMonths: 86,
+      totalProfitLoss: 38382578,
+      averageChange: -2315.12,
+      greatestIncrease: { date: "Feb-2012", amount: 1926159 },
+      greatestDecrease: { date: "Sep-2013", amount: -2196167 }
+  };
+document.getElementById('totalMonths').innerText = analysisResult.totalMonths;
+document.getElementById('totalProfitLoss').innerText = analysisResult.totalProfitLoss.toLocaleString();
+document.getElementById('averageChange').innerText = analysisResult.averageChange.toFixed(2);
+document.getElementById('greatestIncreaseDate').innerText = analysisResult.greatestIncrease.date;
+document.getElementById('greatestIncreaseAmount').innerText = '$' + analysisResult.greatestIncrease.amount.toLocaleString();
+document.getElementById('greatestDecreaseDate').innerText = analysisResult.greatestDecrease.date;
+document.getElementById('greatestDecreaseAmount').innerText = '$' + analysisResult.greatestDecrease.amount.toLocaleString()
+</script>
+</body>
+</html>
